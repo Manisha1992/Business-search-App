@@ -26,7 +26,6 @@ var yelp = new Yelp({
     token_secret: 'uF-cSlKj9usvzCIjSeVzwR2OcS8'
 });
 
-/*Foursquare middleware*/
 var fourSquare = new Dodge({
     clientId: 'EYKK5MEYA0CZDJKVZDAG40XDXGPTEAJDBJMKQJ0PVIXRVLQ3',
     clientSecret: 'CDMXZTPWMVUZHYYH4ORN2W5LULKRF5VQTHKOJXHSVTMXUKCC'
