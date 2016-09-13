@@ -1,17 +1,13 @@
-w3App.controller("viewDataCtrl", function ($scope, $http, $routeParams, $window) {
+myApp.controller("viewDataCtrl", function ($scope, $http, $routeParams, $window) {
     var markers = [];
     var itemName = $routeParams.menuName;
     var location = angular.element('#city').val();
-
-    if (location.length < 1) {
-        location = 'London';
-    }
     $scope.fetchData = [];
+
     $http({
         method: 'GET',
         url: '/search?location=' + location + '&term=' + itemName + ''
     }).then(function successCallback(response) {
-
         var data = response.data;
         $scope.fetchData = data;
         loadGoogleMarkers();
@@ -22,7 +18,6 @@ w3App.controller("viewDataCtrl", function ($scope, $http, $routeParams, $window)
     loadGoogleMarkers();
     $scope.gotoMarker = function (event) {
         var id = event.currentTarget.id;
-
         for (var i = 0; i < markers.length; i++) {
             var marker = markers[i];
             if (marker.id === id) {
@@ -47,13 +42,14 @@ w3App.controller("viewDataCtrl", function ($scope, $http, $routeParams, $window)
         var bounds = new google.maps.LatLngBounds();
 
         var marker, i;
+
         function setPopup(item){
-            var contentString = '<div class="gridBlock" ng-click="gotoBusiness('+item.url+')"  id="{{'+ item.id +'}}" ng-mouseover="gotoMarker($event)">' +
+            var contentString = '<div class="gridBlock" ng-click="gotoBusiness('+item.url+')"  ' +
+                'id="{{'+ item.id +'}}" ng-mouseover="gotoMarker($event)">' +
                 '<p class="mapitem">Name:'+item.name+'</p>' +
                 '<p class="item-styles">Address:'+item.address+'</p></div>';
             return contentString;
         }
-
         for (i = 0; i < locations.length; i++) {
             var coords = locations[i].cords;
             marker = new google.maps.Marker({

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="m3wApp" lang="en">
+<html ng-app="myApp" lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -9,14 +9,12 @@
     <script type="text/javascript" src="js/lib/jquery.min.js"></script>
     <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://demo.designinvento.net/classiads-new/wp-content/themes/classiads/css/bootstrap-responsive.css?ver=2.3.2" rel="stylesheet">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="css/styles.css" rel="stylesheet">
-
 </head>
 
-<body ng-controller="w3MainCtrl">
+<body ng-controller="MainController">
     <div class="container-fluid">
         <div class="row main">
             <div class="col-md-12">
@@ -31,22 +29,21 @@
                         <input type="text" id="city" class="form-control" placeholder="Search city" ng-model="city" required>
                     </div>
                     <div class="form-group">
-                        <button type="submit" ng-click="update()" class="btn btn-warning form-control"><span class="glyphicon glyphicon-search"></span>  Search</button>
+                        <button type="submit" ng-click="find()" class="btn btn-warning form-control"><span class="glyphicon glyphicon-search"></span> Search</button>
                     </div>
                 </form>
             </div>
         </div>
+
         <div>
             <ng-view></ng-view>
         </div>
     </div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqrm1LI-8ddEp54fYxIEAP1sF64rc4wMU" async defer></script>
-<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.js"></script>-->
 <script type="text/javascript" src="js/lib/angular.min.js"></script>
 <script type="text/javascript" src="js/lib/angular-route.min.js"></script>
 <script type="text/javascript" src="app.js"></script>
-
 <script type="text/javascript" src="js/controllers/viewDataCtrl.js"></script>
 </body>
 </html>
