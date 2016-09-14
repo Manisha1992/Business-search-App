@@ -16,7 +16,7 @@ myApp.controller("MainController", function($scope, $location){
 		$scope.data.push(angular.element('#search').val());
 		$scope.data.push(angular.element('#city').val());
 
-		if ($scope.data[0] != "Search item" && $scope.data[0] != '') {
+		if ($scope.data[0] != '') {
 			$location.path('/' + $scope.data);
 		}
 	}

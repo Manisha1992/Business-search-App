@@ -24,8 +24,7 @@ myApp.controller("viewDataCtrl", function ($scope, $http, $routeParams, $window)
         var locations = $scope.fetchData;
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 15,
-            center: new google.maps.LatLng(-33.92, 151.25),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+            center: new google.maps.LatLng(-33.92, 151.25)
         });
 
         var infowindow = new google.maps.InfoWindow();
@@ -63,6 +62,6 @@ myApp.controller("viewDataCtrl", function ($scope, $http, $routeParams, $window)
             })(marker, i));
         }
 
-        map.fitBounds(bounds);
+       map.fitBounds(bounds);
     }
 });
