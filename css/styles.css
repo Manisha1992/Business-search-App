@@ -121,6 +121,9 @@ body{
     color: #0073bb;
     font-weight: bold;
 }
+.mapitem:hover{
+    cursor: pointer;
+}
 
 .mapitem:hover{
     color: #30cc72;

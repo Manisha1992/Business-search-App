@@ -1,6 +1,7 @@
 myApp.controller("viewDataCtrl", function ($scope, $http, $routeParams, $window) {
     var markers = [];
     var itemName = $routeParams.menuName;
+    console.log('itemName',itemName);
     var location = angular.element('#city').val();
     $scope.fetchData = [];
 
@@ -14,17 +15,6 @@ myApp.controller("viewDataCtrl", function ($scope, $http, $routeParams, $window)
     }, function errorCallback(response) {
         console.log('search data error', response);
     });
-
-    loadGoogleMarkers();
-    $scope.gotoMarker = function (event) {
-        var id = event.currentTarget.id;
-        for (var i = 0; i < markers.length; i++) {
-            var marker = markers[i];
-            if (marker.id === id) {
-                $(marker).click();
-            }
-        }
-    };
 
     $scope.gotoBusiness = function (url) {
         $window.open(url, '_blank');
@@ -46,7 +36,7 @@ myApp.controller("viewDataCtrl", function ($scope, $http, $routeParams, $window)
         function setPopup(item){
             var contentString = '<div class="gridBlock" ng-click="gotoBusiness('+item.url+')"  ' +
                 'id="{{'+ item.id +'}}" ng-mouseover="gotoMarker($event)">' +
-                '<p class="mapitem">Name:'+item.name+'</p>' +
+                '<a class="mapitem" href="'+item.url+'" target="_blank">Name:'+item.name+'</a>' +
                 '<p class="item-styles">Address:'+item.address+'</p></div>';
             return contentString;
         }
