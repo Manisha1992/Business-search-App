@@ -57,7 +57,7 @@ body{
 }
 
 .item-detail{
-    height: 165px;
+    height: 185px;
     background-color: #FFFFFF;
     border-bottom: 2px solid #D3D3D3;
 }
@@ -129,4 +129,12 @@ body{
 
 .mapitem:hover{
     color: #30cc72;
+}
+.phone{
+    color:#0073bb;
+    font-weight: bold;
+}
+.rating{
+    color:#0073bb;
+    font-weight: bold;
 }

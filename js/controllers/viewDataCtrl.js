@@ -36,7 +36,9 @@ myApp.controller("viewDataCtrl", function ($scope, $http, $routeParams, $window)
             var contentString = '<div class="gridBlock" ng-click="gotoBusiness('+item.url+')"  ' +
                 'id="{{'+ item.id +'}}" ng-mouseover="gotoMarker($event)">' +
                 '<a class="mapitem" href="'+item.url+'" target="_blank">Name:'+item.name+'</a>' +
-                '<p class="item-styles">Address:'+item.address+'</p></div>';
+                '<p class="item-styles">Address:'+item.address+'</p>'+
+                '<p class="item-styles">Phone:'+item.phone+'</p>'+
+                '<p class="item-styles">Rating:'+item.rating+'</p></div>';
             return contentString;
         }
         for (i = 0; i < locations.length; i++) {
